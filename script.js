@@ -1,3 +1,11 @@
+const playerOption =  document.querySelector(`.player-selection`)
+const computerOption = document.querySelector(`.computer-selection`)
+const computerImg = document.querySelector(`.computer-images`)
+
+
+
+
+
 function playerChoice (){
   let playerInput = false
   while (playerInput == false) {
@@ -14,23 +22,36 @@ function playerChoice (){
 }
 
 // computer  randomly selects Rock or Paper or Scissors
-function computerPlay (value){
+function computerPlay (){
   let choice =``
-switch (value) {
+switch (Math.floor(Math.random() * 3)) {
   case 0:
-    choice = `rock`
-    console.log(`Computer plays: rock`)
+    choice = renderRock()
     break;
   case 1:
-    choice = `paper`
-    console.log(`Computer plays: paper`)
+    choice = renderpaper() 
     break;
   case 2:
-    choice = `scissors`
-  console.log(`Computer plays: scissors`)
+    choice = renderScissors()
     break;   
   }
   return choice
+}
+
+function renderRock(){
+  const image = document.createElement(`img`)
+  image.src = `./images/a-rock.png`
+  computerImg.appendChild(image)
+}
+function renderpaper(){
+  const image = document.createElement(`img`)
+  image.src = `./images/paper.jpg`
+  computerImg.appendChild(image)
+}
+function renderScissors(){
+  const image = document.createElement(`img`)
+  image.src = `./images/scissors.jpg`
+  computerImg.appendChild(image)
 }
 
 // Check who wins buy comparing the two choices
@@ -47,7 +68,6 @@ function checkWinner(playerSelection, computerSelction) {
     return `Computer win`
   } 
 }
-
 // outPuts the result of Check winner function and returns the winner
 function playRound(playerSelection, computerSelection){
   const result = checkWinner(playerSelection, computerSelection)
@@ -59,35 +79,33 @@ function playRound(playerSelection, computerSelection){
     return `You LOSE! ${computerSelection} beats ${playerSelection}`
   }
 }
-
  // The game is played and looped through for  5 rounds then diplayes the player game points 
  // each round and diplays the final score and who won the game
-let playerScore = 0
-let computerScore = 0
-let round = 1
+
 
 function game() {
-  console.log(`Let's play Rock, Paper, Scissors,`)
-  console.log(`-------------------------------`)
+  let playerScore = 0
+  let computerScore = 0
+  let round = 0
   for ( let i = 0; i < 5; i++) {
       const playerSelection = playerChoice()
-      const computerSelection = computerPlay(Math.floor(Math.random() * 3))
+      const computerSelection = computerPlay()
       console.log(playRound(playerSelection,computerSelection))
       if(checkWinner(playerSelection, computerSelection) == `Player win`){
-        console.log(`Player: ${++playerScore}`)
+        console.log(`Player score: ${++playerScore}`)
       }else if(checkWinner(playerSelection, computerSelection) == `Computer win`){
-          console.log(`Computer: ${++computerScore}`)
+        console.log(`Computer score: ${++computerScore}`)
       }
-      console.log(`----- ROUND: ${round++} OVER -----`)
+      console.log(`----- ROUND: ${++round} OVER -----`)
   }
-  console.log(`------ FINAL SCORE ------`)
+  document.querySelector(`.final`).textContent = `------ FINAL SCORE ------`
   if(playerScore > computerScore) {
-    console.log(`Player you won. Player: ${playerScore} vs Computer: ${computerScore}`)
+    document.querySelector(`.final-score`).textContent = (`Player you won. Player: ${playerScore} vs Computer: ${computerScore}`)
   }else if(playerScore < computerScore) {
-    console.log(`Computer wins. Player: ${playerScore} vs Computer: ${computerScore}`)
+    document.querySelector(`.final-score`).textContent = (`Computer wins. Player: ${playerScore} vs Computer: ${computerScore}`)
   }else {
-    console.log(`We have a tie. Player: ${playerScore} and Computer: ${computerScore}`)
+    document.querySelector(`.final-score`).textContent = (`We have a tie. Player: ${playerScore} and Computer: ${computerScore}`)
   }
-  document.querySelector(".start-btn").textContent = "Start New Game"
-  console.log(`------ GAME OVER ------`)
+  document.querySelector(`.start-btn`).textContent = `Start New game`
+  document.querySelector(`.game-over`).textContent = `------ GAME OVER ------`
 }
