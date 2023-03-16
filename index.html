@@ -11,38 +11,42 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 class="title">Play Rock Paper Scissors</h1>
-    <p class="subtitle">First player to win 3 games</p>
-    <div class="score"></div>
-    <div class="winnerDiv">
-      <h1 class="winner"></h1>
-      <button class="reset" onclick="resetGame()">Play Again?</button>
-    </div>
-    <div class="playerSection">
-      <h3 class="playerChoice"></h3>
-      <h3 class="playerScore"> <span class="player-emoji">🧑‍💻</span> Player Score: 0</h3>
-      <p class="instructions">Click on an image to select your option</p>
-      <div class="playerImgs">
-        <img src="./images/rock.jpg" alt="Rock" class="pImg" id="rock" />
-        <img src="./images/paper.jpg" alt="Paper" class="pImg" id="paper" />
-        <img
-          src="./images/scissors.jpg"
-          alt="Scissors"
-          class="pImg"
-          id="scissors"
-        />
+    <main class="main">
+      <h1 class="title">Play Rock Paper Scissors</h1>
+      <p class="subtitle">First player to win 3 games</p>
+      <div class="score"></div>
+      <div class="winnerDiv">
+        <h1 class="winner"></h1>
+        <button class="reset" onclick="resetGame()">Play Again?</button>
       </div>
-    </div>
-    <div class="computerSection">
-      <h3 class="computerChoice"></h3>
-      <h3 class="computerScore"> <span class="comp-emoji">🤖</span> Computer Score: 0</h3>
-      <div class="computerImgs">
-        <img src="./images/rock.jpg" alt="Rock" class="rock" />
-        <img src="./images/paper.jpg" alt="Paper" class="paper" />
-        <img src="./images/scissors.jpg" alt="Scissors" class="scissors" />
+
+      <div class="playerSection">
+        <h3 class="playerChoice"></h3>
+        <h3 class="playerScore"> <span class="player-emoji">🧑‍💻</span> Player Score: 0</h3>
+        <p class="instructions">Click on an image to select your option</p>
+        <div class="playerImgs">
+          <img src="./images/rock.jpg" alt="Rock" class="pImg" id="rock" />
+          <img src="./images/paper.jpg" alt="Paper" class="pImg" id="paper" />
+          <img
+            src="./images/scissors.jpg"
+            alt="Scissors"
+            class="pImg"
+            id="scissors"
+          />
+        </div>
       </div>
-    </div>
-    <h3 class="ties">Ties: 0</h3>
+
+      <div class="computerSection">
+        <h3 class="computerChoice"></h3>
+        <h3 class="computerScore"> <span class="comp-emoji">🤖</span> Computer Score: 0</h3>
+        <div class="computerImgs">
+          <img src="./images/rock.jpg" alt="Rock" class="rock" />
+          <img src="./images/paper.jpg" alt="Paper" class="paper" />
+          <img src="./images/scissors.jpg" alt="Scissors" class="scissors" />
+        </div>
+      </div>
+      <h3 class="ties">Ties: 0</h3>
+    </main>
   </body>
   <script src="script.js"></script>
 </html>

@@ -13,7 +13,6 @@ function resetGame() {
 }
 
 function startGame() {
-  //play the game until someone wins 5 times
   let imgs = document.querySelectorAll("img");
   imgs.forEach((img) =>
     img.addEventListener("click", () => {
@@ -38,9 +37,6 @@ function playRound(playerChoice) {
   displayRound(playerChoice, computerChoice, winner);
   wins = checkWins();
   if (wins == 3) {
-    //display end results
-    //change the button to visible,
-    //change the text to display winner
     displayEnd();
   }
 }
@@ -94,7 +90,7 @@ function computerSelect() {
   document.querySelector(`.${choice}`).classList.add("active")
   setTimeout(() => {
     document.querySelector(`.${choice}`).classList.remove("active")
-  }, 1000);
+  }, 2000);
   return choice;
 }
 
