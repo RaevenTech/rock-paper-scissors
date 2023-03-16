@@ -4,7 +4,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(18, 201, 2, 0.5);
+  background-color: rgb(61, 31, 9);
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
@@ -14,7 +14,7 @@ body {
 }
 
 .main {
-  border: 4px dotted green;
+  border: 5px double goldenrod;
   padding: 5px 40px;
   border-radius: 5px;
   background-color: rgb(166, 248, 180);
@@ -31,13 +31,6 @@ body {
   margin-top: 5px;
   letter-spacing: 1px;
 }
-
-.playerScore,
-.computerScore {
-  margin-bottom: 0px;
-}
-
-
 
 .comp-emoji,
 .player-emoji {
@@ -85,7 +78,11 @@ img {
 }
 
 .winner {
+  text-align: center;
   width: 100%;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  color: goldenrod;
 }
 
 .reset {
@@ -111,6 +108,12 @@ img {
   align-items: center;
 }
 
+.playerScore,
+.computerScore {
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
 .ties {
   margin-top: 5px;
 }
@@ -120,4 +123,8 @@ img {
 .computerScore {
   font-size: 25px;
   letter-spacing: 2px;
+}
+
+.playerChoice {
+  margin-bottom: 0px;
 }
