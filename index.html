@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Rock Paper Scissors</title>
-</head>
-<body>
-  <header>
-    <h1>Rock Paper Scissors</h1>
-    <h1 class="winner"></h1>
-    <button class="start-btn" onclick="game()">START GAME</button>
-  </header>
-  <main>
-    <section id="player-section">
-      <div class="player">
-        <h1>Player</h1>
-        <h2 class="player-selection"></h2>
-        <h3 class="player-score"> Score:0 </h3>
-        <p>Select one</p>
-        <div class="player-images">
-          <img src="./images/a-rock.png" alt="a rock" class="playerImg" id="rock"/>
-          <img src="./images/paper.jpg" alt="paper" class="playerImg" id="rock"/>
-          <img src="./images/scissors.jpg" alt="scissors" class="playerImg" id="rock"/>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>Rock Paper Scissors with UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="title">Play Rock Paper Scissors</h1>
+    <p class="subtitle">First player to win 3 games</p>
+    <div class="score"></div>
+    <div class="winnerDiv">
+      <h1 class="winner"></h1>
+      <button class="reset" onclick="resetGame()">Play Again?</button>
+    </div>
+    <div class="playerSection">
+      <h3 class="playerChoice"></h3>
+      <h3 class="playerScore"> <span class="player-emoji">🧑‍💻</span> Player Score: 0</h3>
+      <p class="instructions">Click on an image to select your option</p>
+      <div class="playerImgs">
+        <img src="./images/rock.jpg" alt="Rock" class="pImg" id="rock" />
+        <img src="./images/paper.jpg" alt="Paper" class="pImg" id="paper" />
+        <img
+          src="./images/scissors.jpg"
+          alt="Scissors"
+          class="pImg"
+          id="scissors"
+        />
       </div>
-    </section>
-
-    <section id="computer-section">
-      <div class="computer">
-        <h1>Computer</h1>
-        <h2 class="computer-selection"></h2>
-        <h3 class="conputer-score"> Score:0 </h3>
-        <div class="computer-images">
-         <!-- <img src="./images/a-rock.png" alt="a rock" class="rock" />
-          <img src="./images/paper.jpg" alt="paper" class="paper" />
-          <img src="./images/scissors.jpg" alt="scissors" class="scissors" /> -->
-        </div>
+    </div>
+    <div class="computerSection">
+      <h3 class="computerChoice"></h3>
+      <h3 class="computerScore"> <span class="comp-emoji">🤖</span> Computer Score: 0</h3>
+      <div class="computerImgs">
+        <img src="./images/rock.jpg" alt="Rock" class="rock" />
+        <img src="./images/paper.jpg" alt="Paper" class="paper" />
+        <img src="./images/scissors.jpg" alt="Scissors" class="scissors" />
       </div>
-    </section>
-    <p class="final"></p>
-    <h2 class="final-score"></h2>
-    <p class="game-over"></p>
-  </main>
-</body>
-<script src="script.js"></script>
+    </div>
+    <h3 class="ties">Ties: 0</h3>
+  </body>
+  <script src="script.js"></script>
 </html>
