@@ -135,3 +135,16 @@ img {
   margin-bottom: 5px;
   margin-top: 10px;
 }
+
+.back-code-btns {
+  width: 27%;
+  display: flex;
+  gap: 1em;
+  margin-top: .25em;
+}
+
+.btn {
+  background-color: #009207ce;
+  border-radius: 5px;
+  border: none;
+}
